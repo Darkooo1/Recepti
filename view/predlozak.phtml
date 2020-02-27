@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="hr">
+<?php include_once 'predlozak/head.phtml'; ?>
+
+<body>
+<?php require_once 'predlozak/izbornik.phtml' ?>
+
+    <main id="centar" role="main">
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col-md-3 col-sm-4 col-xs-12">
+
+           
+                    <div id="kategorije"><div class="btn-group-vertical">     
+                    Tu cemo staviti neke slike ili tako nesta, nekki dodatni izbornik
+                    <?php
+if (isset ($_SESSION['registracija'])):
+
+                ?>
+                   Unos recepata <button type="button" class="btn btn-secondary" href="">Predjela</button>
+                    <button type="button" class="btn btn-secondary">Juhe</button>
+                    <button type="button" class="btn btn-secondary">Meso i riba</button>
+                    <button type="button" class="btn btn-secondary">Prilozi</button>
+                    <button type="button" class="btn btn-secondary">Vegetarijanska jela</button>
+                    <button type="button" class="btn btn-secondary">Salate</button>
+                    <button type="button" class="btn btn-secondary">Slastice</button>
+                    <?php
+                endif;
+            ?>
+</div> </div>
+                   
+                </div> 
+                <div class="col-md-6 col-sm-8 col-xs-12">
+                    <div id="sadrzaj"><?php echo $sadrzaj; ?></div>
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div id="nesto">nesto</div>
+                </div>
+            </div>
+
+    </main>
+
+    <?php require_once 'predlozak/podnozje.phtml' ?>
+    
+    <?php require_once 'predlozak/skripte.phtml' ?>
+    
+</body>
+
+</html>
+

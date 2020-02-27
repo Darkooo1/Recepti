@@ -1,0 +1,48 @@
+/* Show it is fixed to the top */
+:root  {
+    --visinacentra: 800px;
+  }
+
+  /*
+body {
+    
+    padding-top: 4.5rem;
+  }
+*/
+
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+  #centar 
+  {
+      min-height: var(--visinacentra);
+  }
+
+  #kategorije
+  {
+background-color: aqua;
+min-height: var(--visinacentra);
+padding: 5px;
+  }
+
+  #sadrzaj
+  {
+background-color: chartreuse;
+min-height: var(--visinacentra);
+padding: 5px;
+  }
+  #nesto
+  {
+  background-color: dimgrey;
+  min-height: var(--visinacentra);
+  padding: 5px;
+  }
+
+footer{
+    background-color: rgb(170, 121, 22);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-image: url(../img/jabuke.jpg);
+}

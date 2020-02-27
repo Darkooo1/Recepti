@@ -1,0 +1,74 @@
+<!--  provjera registriranih usera cemo raditi vljd na tecaju, kaze fidro ajax, pitati profesora ukoliko ne objaasnjava -->
+<form class="form-horizontal" action='/registration/createnewuser' method="POST">
+  <fieldset>
+    <div id="legend">
+      <legend class="text-center text-info">Registracija</legend>
+    </div>
+    <div class="control-group">
+      
+      <label class="text-info"  for="ime">IME</label>
+      <div class="controls">
+        <input type="text" id="ime" name="ime" placeholder="" class="input-xlarge" 
+        value="<?php echo isset ($_POST['ime']) ? $_POST['ime']: ''; ?>">
+        <p class="help-block">Upišite vaše ime</p>
+      </div>
+    </div>
+    <div class="control-group">
+      
+      <label class="text-info"  for="prezime">PREZIME</label>
+      <div class="controls">
+        <input type="text" id="prezime" name="prezime" placeholder="" class="input-xlarge"
+        value="<?php echo isset ($_POST['prezime']) ? $_POST['prezime']: ''; ?>">
+        <p class="help-block">Upišite vaše prezime</p>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <!-- Username -->
+      <label class="text-info"  for="username">KORISNIČKO IME</label>
+      <div class="controls">
+        <input type="text" id="username" name="username" placeholder="" class="input-xlarge"
+        value="<?php echo isset ($_POST['username']) ? $_POST['username']: ''; ?>">
+        <p class="help-block">Korisničko ime može sadržavati bilo koja slova ili brojeve, bez razmaka</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- E-mail -->
+      <label class="text-info" for="email">E-MAIL</label>
+      <div class="controls">
+        <input type="text" id="email" name="email" placeholder="" class="input-xlarge"
+        value="<?php echo isset ($_POST['email']) ? $_POST['email']: ''; ?>">
+        <p class="help-block">Molimo upišite vašu email adresu</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password-->
+      <label class="text-info" for="password">ZAPORKA</label>
+      <div class="controls">
+        <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+        <p class="help-block">Zaporka bi trebala biti najmanje 4 znaka</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Password -->
+      <label class="text-info"  for="password_confirm">ZAPORKA (POTVRDI)</label>
+      <div class="controls">
+        <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
+        <p class="help-block">Potvrdite zaporku</p>
+      </div>
+    </div>
+ 
+    <div class="control-group">
+      <!-- Button -->
+      <div class="controls">
+        <button class="btn btn-info btn-md">Registriraj</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+<?php
+    echo $poruka;
+?>
