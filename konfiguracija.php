@@ -1,5 +1,10 @@
 <?php
-
+ if(
+    $_SERVER['HTTP_HOST'] === 'localhost' ||
+    $_SERVER['HTTP_HOST'] === 'jelasvijetaaplikacija.com' ||
+    $_SERVER['SERVER_ADDR']==='127.0.0.1'
+    ){
+    
 return [
     'nazivAPP' => 'RECEPTI',
     'url' => 'http://jelasvijetaaplikacija.com/',
@@ -10,8 +15,10 @@ return [
         'korisnik'=>'edunova',
         'lozinka'=>'edunova'
     ]
-
-/*
+];
+}
+else 
+{
 return [
     'nazivAPP' => 'RECEPTI',
     'url' => 'http://ziki.webaplikacija.com/',
@@ -21,5 +28,5 @@ return [
         'korisnik'=>KORISNIKBAZENASERVERU,
         'lozinka'=>LOZINKASERVERSQL
     ]
-    */
 ];
+}
