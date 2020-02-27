@@ -81,11 +81,11 @@ public function logout()
     session_destroy();
     $this->index();
 }
-
+/*
 public function refreshtableregistracija()
 {
     $vezabaza= database::getInstanca();
-   $vezabaza->execute('
+    $izraz=$vezabaza->prepare('
     drop table if exists registracija;
     create table registracija(
         sifra       int not null primary key auto_increment,
@@ -105,7 +105,8 @@ public function refreshtableregistracija()
         (null, \'AdminZidar\', \'tozidar@gmail.com\',
         \'$2y$10$b0In9IcFO63vOcA68CAlnemPx8u8lH1z6/1WFcYyFtfLoXiQ2r4DK\',
         \'Admin\', \'Zidar\',null);');
+        $izraz->execute();
         
-}
+}*/
 
 }
