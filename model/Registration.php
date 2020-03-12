@@ -6,9 +6,17 @@ class Registration
     public static function readRegistration()
     {
         $vezabaza = database::getInstanca();
-        $izraz = $vezabaza->prepare('select * from registracija');
+        $izraz = $vezabaza->prepare('select * from registracija where sifra>2');
         $izraz->execute();
         return $izraz->fetchAll();
+    }
+    public static function read($sifra)
+    {
+        $vezabaza = database::getInstanca();
+        $izraz = $vezabaza->prepare('select email, password, ime, prezime, username from registracija
+        where sifra=:sifra');
+        $izraz->execute(['sifra'=>$sifra]);
+        return $izraz->fetch();
     }
 
     public static function create()
@@ -21,11 +29,11 @@ class Registration
         $izraz->execute($_POST);
        
     }
-
+    
     public static function delete()
     {
         try{ //na ovakav nacin izvrsavamo radnju u bazi neovisno o nasem programu- 
-            //da ne dodje do rusenje cijelog izvodenja programa, uglavnom bi se ttrebalo raditi na ovaka nacin
+            //da ne dodje do rusenje cijelog izvodenja programa, uglavnom bi se ttrebalo raditi na ovakav nacin
         $vezabaza = database::getInstanca();
         $izraz = $vezabaza->prepare('delete from registracija where password=:password');
         $izraz->execute($_GET);
@@ -36,6 +44,23 @@ class Registration
     return true;
 
 }
+public static function update(){
+    try{
+    $vezabaza = database::getInstanca();
+    
+    $izraz=$vezabaza->prepare('UPDATE registracija 
+    set username=:username,email=:email,ime=:ime,prezime=:prezime where sifra=:sifra');
+    $izraz->execute($_POST); 
+    }
+    catch(PDOException $e){  
+        echo $e->getMessage(); 
+        return false;
+    }
+    return true;
+
+}
+
+ 
 
 /*
 public static function registrationnewemail()

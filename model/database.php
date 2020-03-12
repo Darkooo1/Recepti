@@ -15,7 +15,7 @@ class database extends PDO
     {
         if (is_null(self::$instanca))
         {
-            self::$instanca= new self(PocetnaApp::konfiguracija('database'));
+            self::$instanca= new self(InitialApp::configuration('database'));
         }
         return self::$instanca;
     }

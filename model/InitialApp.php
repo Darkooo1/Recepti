@@ -1,6 +1,6 @@
 <?php
 
-class PocetnaApp
+class InitialApp
 {
     public static function pocetna()
     {
@@ -36,11 +36,11 @@ class PocetnaApp
 
     }
     
-    public static function konfiguracija($kljuc)
+    public static function configuration($kljuc)
     {
-        $konfiguracija = include BP . 'konfiguracija.php';
+        $configuration = include BP . 'configuration.php';
     
-        return $konfiguracija[$kljuc];
+        return $configuration[$kljuc];
     }
 
  
