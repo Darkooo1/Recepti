@@ -10,7 +10,7 @@ class RegistrationController extends Controller
     {
         $this->view->render($this->viewDir . 'newRegistration', 
         [
-            'poruka'=>'Potrebno je popuniti sve podatke'
+            'message'=>'Potrebno je popuniti sve podatke'
         ]);
       
     }
@@ -20,7 +20,7 @@ class RegistrationController extends Controller
     {
         $this->view->render($this->viewDir . 'newRegistration', 
         [
-            'poruka'=>'Potrebno je popuniti sve podatke'
+            'message'=>'Potrebno je popuniti sve podatke'
         ]);
     }
 */

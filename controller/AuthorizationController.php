@@ -9,7 +9,7 @@ class AuthorizationController extends Controller
         {
             $this->view->render ('login',
             [
-                'poruka'=>'Potrebna je prijava!',
+                'message'=>'Potrebna je prijava!',
                 'email'=>''
             ]);
             exit;

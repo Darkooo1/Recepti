@@ -32,7 +32,7 @@ class AdminZidarController extends AdminController
     }
     $this->view->render($this->viewDir . 'changes',
     ['registracija'=>$registracija,
-        'poruka'=>'Promjenite željene podatke']
+        'message'=>'Promjenite željene podatke']
 );
 
 }

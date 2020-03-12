@@ -14,7 +14,7 @@ public function login()
 {
     $this->view->render('login',
     [
-        'poruka'=> 'Unesite pristupne podatke ili izvršite registraciju',
+        'message'=> 'Unesite pristupne podatke ili izvršite registraciju',
         'email'=>''
     ]);
 } 
@@ -25,7 +25,7 @@ public function AuthorizationLogin()
     {
         $this->view->render('login',
         [
-            'poruka'=>'Nisu postavljeni pristupni podaci',
+            'message'=>'Nisu postavljeni pristupni podaci',
             'email'=>''
         ]);
         return;
@@ -34,7 +34,7 @@ public function AuthorizationLogin()
     {
         $this->view->render('login',
         [
-            'poruka'=>'Pristupni podaci obavezni',
+            'message'=>'Pristupni podaci obavezni',
             'email'=>$_POST['email']
         ]);
         return;
@@ -51,7 +51,7 @@ public function AuthorizationLogin()
     {
         $this->view->render('login',
         [
-            'poruka'=>'Ne postojeći korisnik',
+            'message'=>'Ne postojeći korisnik',
             'email'=>$_POST['email']
         ]);
         return;
@@ -61,7 +61,7 @@ public function AuthorizationLogin()
     {
         $this->view->render('login',
         [
-            'poruka'=>'Neispravan email ili lozinka',
+            'message'=>'Neispravan email ili lozinka',
             'email'=>$_POST['email']
         ]);
         return;
