@@ -19,20 +19,15 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-     
-          <a class="dropdown-item" href="#">Predjela</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Juhe</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Meso i riba</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Prilozi</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Vegetarijanska jela</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Salate</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Slastice</a>
+     <?php $kategorija=Kategorija::readAll();
+     foreach ($kategorija as $kat):?>
+
+          <a class="dropdown-item" href="#"><?php echo $kat->katjela; ?></a>
+<?php if (next($kategorija)==true) {
+  echo '<div class="dropdown-divider"></div>';
+} ?>
+     <?php endforeach; ?>
+       
         </div>
       </li>
       <?php

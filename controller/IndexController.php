@@ -81,6 +81,8 @@ public function logout()
     session_destroy();
     $this->index();
 }
+
+
 /*
 public function refreshtableregistracija()
 {

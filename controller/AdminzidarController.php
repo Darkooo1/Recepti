@@ -32,15 +32,18 @@ class AdminZidarController extends AdminController
     }
     $this->view->render($this->viewDir . 'changes',
     ['registracija'=>$registracija,
-        'message'=>'Promjenite željene podatke']
+        'message'=>'Promjenite željene podatke',
+        'sifra'=> $_GET['sifra']
+        ]
 );
 
 }
 
     public function changeregistration()
     {
+        /*print_r ($_POST);*/
         Registration::update();
-        header('location: /adminzidar/index');
+       header('location: /adminzidar/index');
     }
    
 
