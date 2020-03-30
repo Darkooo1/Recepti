@@ -6,7 +6,7 @@ class Registration
     public static function readRegistration()
     {
         $vezabaza = database::getInstanca();
-        $izraz = $vezabaza->prepare('select * from registracija where sifra>2');
+        $izraz = $vezabaza->prepare('select * from registracija where sifra!=2');
         $izraz->execute();
         return $izraz->fetchAll();
     }

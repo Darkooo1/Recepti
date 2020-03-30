@@ -1,1 +1,16 @@
-pocetna stranica
+<table>
+    <thead>
+        <tr>
+            <th>Kategorija</th>
+            <th>Naziv</th>
+             
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        foreach($podaci as $red){
+            include 'jelapopis.phtml';
+        }
+    ?>
+    </tbody>
+</table>

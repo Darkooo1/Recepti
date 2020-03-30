@@ -11,37 +11,40 @@
                 <div class="col-md-3 col-sm-4 col-xs-12">
                     <div id="kategorije">
                         <p>Tu cemo staviti neke slike ili tako nesta, nekki dodatni izbornik</p>
-                        <div>
-                            <?php
-                                if (isset ($_SESSION['registracija'])): 
-                            ?>
-                            Unos recepata:
-                            <div>
-                                <div class="btn-group-vertical" style="width: auto; display: block;">
-                                    <?php
-                                        $kategorija=Kategorija::readAll();
-                                        foreach ($kategorija as $kat):
-                                    ?>
-                                            <button type="button" class="btn btn-secondary"><?php echo $kat->katjela; ?></button>
-                                    <?php
-                                        endforeach;
-                                        echo '</div>';
-                                        endif;
-                                    ?>
+                                     
+                                        <?php
+                                            if (isset ($_SESSION['registracija'])): 
+                                        ?>
+                                                    Unos recepata:
+                                    
+                                                                <div class="btn-group-vertical" style="width: auto; display: block;">
+                                                            <?php
+                                                                //$kategorija=Kategorija::readAll();
+                                                                foreach ($meniKategorije as $kat):
+                                                            ?>
+                                                            
+                                                                    <button type="button" class="btn btn-secondary"><?php echo $kat->katjela; ?></button>
+                                                                    
+                                                            <?php
+                                                                endforeach;
+                                                                echo '</div>';
+                                                                endif; 
+                                                               
+                                                            ?>
+                                    </div>
+
+                    </div>
+                
+                        <div class="col-md-6 col-sm-8 col-xs-12">
+                            <div id="sadrzaj">
+                        <?php echo $sadrzaj; ?>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="col-md-6 col-sm-8 col-xs-12">
-                    <div id="sadrzaj">
-                        <?php echo $sadrzaj; ?>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div id="nesto">nesto</div>
                     </div>
-                </div>
-
-                <div class="col-md-3 col-sm-12 col-xs-12">
-                    <div id="nesto">nesto</div>
-                </div>
+                </div>   
             </div>
         </div>
     </main>

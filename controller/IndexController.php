@@ -6,7 +6,10 @@ class IndexController extends Controller
 public function index()
 {
 
-    $this->view->render('pocetnastranica');
+    $this->view->render('pocetnastranica',[
+        'podaci'=>Recepti::readAll(),
+        //'smjerovi' => Smjer::readAll()
+    ]);
 
 }
 
