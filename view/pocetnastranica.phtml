@@ -1,16 +1,13 @@
-<table>
-    <thead>
-        <tr>
-            <th>Kategorija</th>
-            <th>Naziv</th>
-             
-        </tr>
-    </thead>
-    <tbody>
-    <?php
+ 
+ <h1 class="bd-title" id="content">Dobrodošli na web stranicu Jela svijeta!</h1>
+ <p class="bd-lead"> Ovdje možete naći niz finih recepata 
+ pogodnih za svaki dan. Tražite li ideju za odličan objed na pravom ste mjestu. Također, možete se registrirati i 
+ dodati svoje fine recepte da i drugi posjetioci stranice uživaju u Vašim slasnim jelima. Dobar tek!!! </p>
+
+<div class="grid-x grid-margin-x">
+    <?php 
         foreach($podaci as $red){
             include 'jelapopis.phtml';
         }
-    ?>
-    </tbody>
-</table>
+        ?>
+</div>

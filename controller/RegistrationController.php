@@ -3,7 +3,7 @@
 class RegistrationController extends Controller
 
 {
-    private $viewDir = 'privately' . DIRECTORY_SEPARATOR . 'registration' . DIRECTORY_SEPARATOR;
+    private $viewDir = 'privatno' . DIRECTORY_SEPARATOR . 'registration' . DIRECTORY_SEPARATOR;
 
     public function index()
 

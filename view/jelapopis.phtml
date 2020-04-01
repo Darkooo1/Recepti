@@ -1,7 +1,11 @@
-<tr>
-     
-<td><?php echo $red->katjela ?></td>
-    <td><?php echo $red->naziv ?></td>
-     
-</tr>
+<div class="large-4 cell" style="text-align: center;">
+    <div class="callout">
+        <h1><?php echo $red->katjela ?></h1>
+        <?php echo $red->naziv ?>
+        <hr />
+        <a href="/recepti/index?sifra=<?php echo $red->sifra ?>"><i title="Detaljnije" class="fab fa-readme fa-2x"></i></a> 
+        
+    </div>
+</div>
 
+ 

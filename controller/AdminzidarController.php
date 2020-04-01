@@ -3,7 +3,7 @@
 class AdminZidarController extends AdminController
 
 {
-   private $viewDir = 'privately' . DIRECTORY_SEPARATOR. 'admin' . DIRECTORY_SEPARATOR;
+   private $viewDir = 'privatno' . DIRECTORY_SEPARATOR. 'admin' . DIRECTORY_SEPARATOR;
 
     public function index()
 

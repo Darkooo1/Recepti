@@ -16,5 +16,17 @@ class Recepti{
         return $izraz->fetchAll();
     }
 
+    public static function read($sifra)
+    {
+        $vezabaza = database::getInstanca();
+        $izraz = $vezabaza->prepare('select 
+        sifra, naziv, kolicina, sastojci, opis
+        from recepti 
+        where sifra=:sifra 
+         ');
+         $izraz->execute(['sifra'=>$sifra]);
+        return $izraz->fetch();
+    }
+
 
 }

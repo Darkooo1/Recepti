@@ -8,7 +8,7 @@ public function index()
 
     $this->view->render('pocetnastranica',[
         'podaci'=>Recepti::readAll(),
-        //'smjerovi' => Smjer::readAll()
+       
     ]);
 
 }

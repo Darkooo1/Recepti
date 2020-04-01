@@ -18,12 +18,13 @@
           Recepti
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-     <?php $kategorija=Kategorija::readAll();
-     foreach ($kategorija as $kat):?>
+        <?php
+        //$kategorija=Kategorija::readAll();
+        foreach ($meniKategorije as $kat):
+        ?>
 
           <a class="dropdown-item" href="#"><?php echo $kat->katjela; ?></a>
-<?php if (next($kategorija)==true) {
+<?php if (next($kat)==true) {
   echo '<div class="dropdown-divider"></div>';
 } ?>
      <?php endforeach; ?>
