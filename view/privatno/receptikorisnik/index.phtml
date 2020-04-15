@@ -1,0 +1,23 @@
+prikazati sve unesene recepte od korisnika ulogiranog korisnika-jos nije napravljen kontroler
+
+<h2>Vaši recepti:</h2>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Kategorija
+            </th>
+            <th>
+                 Naziv
+                 </th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        foreach($receptitable as $red){
+            include 'tableusers.phtml';
+        }
+    ?>
+    </tbody>
+</table>
+

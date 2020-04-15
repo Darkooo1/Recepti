@@ -20,30 +20,33 @@ body {
       min-height: var(--visinacentra);
   }
 
-  #kategorije
+  #lijevizbornik
   {
 background-color: aqua;
 min-height: var(--visinacentra);
 padding: 5px;
+/*background-image: url(../img/foodmenu.png);*/
   }
 
-  #sadrzaj
+#sadrzaj
   {
-    background-color: chartreuse;
+    background-color: rgb(145, 182, 177);
 min-height: var(--visinacentra);
 padding: 5px;
-
+background-image: url(../img/foodsadrzaj.png); 
   }
-  #nesto
+  #desnizbornik
   {
   background-color: dimgrey;
   min-height: var(--visinacentra);
   padding: 5px;
+  /*background-image: url(../img/foodmenu.png);*/
   }
 
 footer{
     background-color: rgb(170, 121, 22);
     padding-top: 5px;
     padding-bottom: 5px;
-    background-image: url(../img/jabuke.jpg);
+    background-image: url(../img/food2.png);
+    
 }

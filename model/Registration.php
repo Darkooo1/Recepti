@@ -5,14 +5,14 @@ class Registration
 
     public static function readRegistration()
     {
-        $vezabaza = database::getInstanca();
+        $vezabaza = Database::getInstanca();
         $izraz = $vezabaza->prepare('select * from registracija where sifra!=2');
         $izraz->execute();
         return $izraz->fetchAll();
     }
     public static function read($sifra)
     {
-        $vezabaza = database::getInstanca();
+        $vezabaza = Database::getInstanca();
         $izraz = $vezabaza->prepare('select email, password, ime, prezime, username from registracija
         where sifra=:sifra');
         $izraz->execute(['sifra'=>$sifra]);
@@ -21,7 +21,7 @@ class Registration
 
     public static function create()
     {
-        $vezabaza = database::getInstanca();
+        $vezabaza = Database::getInstanca();
         $izraz = $vezabaza->prepare('INSERT INTO registracija(email, password, ime, prezime, username) VALUES (:email, :password, :ime, 
         :prezime, :username)'); 
         unset($_POST['password_confirm']);
@@ -34,7 +34,7 @@ class Registration
     {
         try{ //na ovakav nacin izvrsavamo radnju u bazi neovisno o nasem programu- 
             //da ne dodje do rusenje cijelog izvodenja programa, uglavnom bi se ttrebalo raditi na ovakav nacin
-        $vezabaza = database::getInstanca();
+        $vezabaza = Database::getInstanca();
         $izraz = $vezabaza->prepare('delete from registracija where password=:password');
         $izraz->execute($_GET);
     }catch(PDOException $e){  //ukoliko nije uspio izvrsiti try onda funkcijom PDOException ispisujemo do koje je greske doslo u bazi
@@ -46,7 +46,7 @@ class Registration
 }
 public static function update(){
     try{
-    $vezabaza = database::getInstanca();
+    $vezabaza = Database::getInstanca();
     
     $izraz=$vezabaza->prepare('UPDATE registracija 
     set username=:username,email=:email,ime=:ime,prezime=:prezime where sifra=:sifra');
@@ -65,7 +65,7 @@ public static function update(){
 /*
 public static function registrationnewemail()
 {
-    $vezabaza = database::getInstanca();
+    $vezabaza = Database::getInstanca();
         $izraz = $vezabaza->prepare('INSERT INTO registracija(email, password, ime, prezime, username,sessionid) 
         VALUES (:email, :password, :ime, :prezime, :username, :sessionid)'); 
         unset($_POST['password_confirm']);

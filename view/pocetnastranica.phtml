@@ -1,8 +1,8 @@
  
- <h1 class="bd-title" id="content">Dobrodošli na web stranicu Jela svijeta!</h1>
- <p class="bd-lead"> Ovdje možete naći niz finih recepata 
+ <h1 class="bd-title" id="content">Dobrodošli na web stranicu Jela svijeta! </h1>
+ <p  class="bd-lead"> <h4>Ovdje možete naći niz finih recepata 
  pogodnih za svaki dan. Tražite li ideju za odličan objed na pravom ste mjestu. Također, možete se registrirati i 
- dodati svoje fine recepte da i drugi posjetioci stranice uživaju u Vašim slasnim jelima. Dobar tek!!! </p>
+ dodati svoje fine recepte da i drugi posjetioci stranice uživaju u Vašim slasnim jelima. Dobar tek!!! </h4></p>
 
 <div class="grid-x grid-margin-x">
     <?php 
@@ -11,3 +11,17 @@
         }
         ?>
 </div>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item ">
+      <a class="page-link" href="/recepti/pretraga?uvjet=<?php echo $uvjet ?>&stranica=<?php echo $stranica-1 ?>">Prethodni</a>
+    </li>
+    <li class="page-item"><a class="page-link"> <?php 
+            echo $stranica . ' / ' . $stranicenje;
+            ?></a></li>
+    <li class="page-item">
+      <a class="page-link" href="/recepti/pretraga?uvjet=<?php echo $uvjet ?>&stranica=<?php echo $stranica+1 ?>">Sljedeći</a>
+    </li>
+  </ul>
+</nav>  

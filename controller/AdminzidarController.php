@@ -1,6 +1,6 @@
 <?php
 
-class AdminZidarController extends AdminController
+class AdminzidarController extends AdminController
 
 {
    private $viewDir = 'privatno' . DIRECTORY_SEPARATOR. 'admin' . DIRECTORY_SEPARATOR;
@@ -41,7 +41,8 @@ class AdminZidarController extends AdminController
 
     public function changeregistration()
     {
-        /*print_r ($_POST);*/
+       /* print_r ($_POST); */
+
         Registration::update();
        header('location: /adminzidar/index');
     }

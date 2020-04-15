@@ -6,8 +6,11 @@ class IndexController extends Controller
 public function index()
 {
 
-    $this->view->render('pocetnastranica',[
-        'podaci'=>Recepti::readAll(),
+    $this->view->render('pocetnastranica',[ 
+        'podaci'=>Recepti::pretraga('','1'),
+            'stranica' => '1',
+            'uvjet' => '',
+            'stranicenje' => Recepti::stranicenje('')
        
     ]);
 
@@ -42,10 +45,7 @@ public function AuthorizationLogin()
         ]);
         return;
     }
-
- 
-
-   $vezabaza= database::getInstanca();
+   $vezabaza= Database::getInstanca();
     $izraz=$vezabaza->prepare('select * from registracija where email=:email;');
     $izraz->execute(['email'=>$_POST['email']]);
     $rezultat=$izraz->fetch ();
@@ -71,7 +71,7 @@ public function AuthorizationLogin()
     }
 
     unset ($rezultat->password);
-    $_SESSION ['registracija']=$rezultat;
+    $_SESSION['registracija']=$rezultat;
      $npc=new NadzornaplocaController();
      $npc->index();
 
@@ -85,11 +85,15 @@ public function logout()
     $this->index();
 }
 
+public function era()
+{
+    $this->view->render('era');
+}
 
 /*
 public function refreshtableregistracija()
 {
-    $vezabaza= database::getInstanca();
+    $vezabaza= Database::getInstanca();
     $izraz=$vezabaza->prepare('
     drop table if exists registracija;
     create table registracija(

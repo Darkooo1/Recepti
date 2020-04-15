@@ -1,0 +1,48 @@
+<form class="log-in-form" method="POST"
+action="/receptikorisnik/unosrecepta">
+
+<div class="form-group">
+<label for="kategorija">KATEGORIJA</label>
+<select name="kategorija" id="kategorija">
+<option value="0">Odaberite kategoriju</option>
+<?php
+foreach ($meniKategorije as $kategorija):
+?>
+  <option
+  value="<?php echo $kategorija->sifra; ?>">
+<?php echo $kategorija->katjela; ?>
+</option>
+<?php endforeach;?>
+</select>
+</div>
+
+  <div class="form-group">
+    <label for="naziv">NAZIV</label>
+    <input type="text" class="form-control" id="naziv" name="naziv" value=""> 
+  </div>
+
+  <div class="form-group">
+    <label for="kolicina">KOLIČINA</label>
+    <input type="text" class="form-control" id="kolicina" name="kolicina" value="">
+  </div>
+
+  <div class="form-group">
+    <label for="text">SASTOJCI</label>
+    <textarea class="form-control" id="sastojci" name="sastojci" rows="2"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="text">PRIPREMA </label>
+    <textarea class="form-control" id="opis" name="opis" rows="6"></textarea>  
+  </div>
+
+  <div class="grid-x grid-margin-x">
+    <div class="large-6 cell">
+      <a href="/receptikorisnik/index" class="alert button expanded">Odustani</a>
+    </div>
+    <div class="large-6 cell">
+      <input type="submit" class="button expanded" value="Završi recept"></input>
+    </div>
+  </div>
+ 
+</form>

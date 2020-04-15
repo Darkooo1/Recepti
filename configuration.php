@@ -9,6 +9,7 @@ return [
     'nazivAPP' => 'RECEPTI',
     'url' => 'http://jelasvijetaaplikacija.com/',
     'dev' => true,
+    'rezultataPoStranici' => 8,
     'database'=>[
         'server'=>'localhost',
         'baza'=>'jelasvijeta',
@@ -22,6 +23,7 @@ else
 return [
     'nazivAPP' => 'RECEPTI',
     'url' => 'http://ziki.webaplikacija.com/',
+    'rezultataPoStranici' => 8,
     'database'=>[
         'server'=>'localhost',
         'baza'=>BAZANASERVERU,

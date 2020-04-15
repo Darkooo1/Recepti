@@ -28,6 +28,6 @@ spl_autoload_register(function($klasa)
     
 });
 
-InitialApp::pocetna();
+Initialapp::pocetna();
 //pocetna aplikacija recepata
 

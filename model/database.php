@@ -1,6 +1,6 @@
 <?php
 
-class database extends PDO
+class Database extends PDO
 {
     private static $instanca;
     public function __construct($database)
@@ -15,7 +15,7 @@ class database extends PDO
     {
         if (is_null(self::$instanca))
         {
-            self::$instanca= new self(InitialApp::configuration('database'));
+            self::$instanca= new self(Initialapp::configuration('database'));
         }
         return self::$instanca;
     }

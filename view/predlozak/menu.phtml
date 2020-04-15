@@ -1,7 +1,7 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
-    <div class="title-bar-title "><?php echo InitialApp::configuration('nazivAPP'); ?></div>
+    <div class="title-bar-title "><?php echo Initialapp::configuration('nazivAPP'); ?></div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -12,25 +12,32 @@
     <li class="nav-item active">
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
+
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" 
         aria-expanded="false">
           Recepti
         </a>
+
+
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <?php
         //$kategorija=Kategorija::readAll();
-        foreach ($meniKategorije as $kat):
+        foreach ($meniKategorije as $kategorija):
         ?>
-
-          <a class="dropdown-item" href="#"><?php echo $kat->katjela; ?></a>
-<?php if (next($kat)==true) {
+<!-- kako napraviti menu kada kliknem na odredjenu kategoriju da izbaci samo jela iz te kategorije- U IZRADI -->
+          <a class="dropdown-item" href="/receptikategorija/index?sifra=<?php echo  $kategorija->sifra; ?>"> 
+          <?php echo $kategorija->katjela; ?></a>
+<?php if (next($kategorija)==true) {
   echo '<div class="dropdown-divider"></div>';
 } ?>
      <?php endforeach; ?>
-       
         </div>
       </li>
+  
+
+
       <?php
                     if(isset($_SESSION['registracija']) && ($_SESSION['registracija']->username==='AdminZidar')):
                 ?>
@@ -39,10 +46,10 @@
         aria-expanded="false">Admin izbornik
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/adminzidar/index">Registrirani korisnici</a> <!-- ne prebacuje na index.phtml od admina -->
+          <a class="dropdown-item" href="/adminzidar/index">Registrirani korisnici</a> 
          
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Recepti</a>
+          <a class="dropdown-item" href="/receptiadminzidar/index">Recepti</a>
         </div>
       </li>
       <?php
@@ -58,10 +65,23 @@
         <?php echo $_SESSION['registracija']->username;?> </a>
       <?php endif;?>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/index/era">ERA</a>
+    </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pretraži</button>
+    
+
+
+    <form 
+    class="form-inline my-2 my-lg-0" action="/recepti/pretraga" method="get"> <!--zaboravio sam staviti / pa je gubio rutu kod pretrage -->
+      <input 
+      class="form-control mr-sm-2" type="search" name="uvjet" id="uvjet" 
+      placeholder="Pretraži" aria-label="Search">
+      <button 
+      class="btn btn-outline-success my-2 my-sm-0" type="submit" 
+      value="<?php echo $uvjet ?>
+      ">Pretraži</button>
     </form>
+
   </div>
 </nav>

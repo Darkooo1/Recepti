@@ -15,15 +15,6 @@ class RegistrationController extends Controller
       
     }
 
-    /*
-    public function new()
-    {
-        $this->view->render($this->viewDir . 'newRegistration', 
-        [
-            'message'=>'Potrebno je popuniti sve podatke'
-        ]);
-    }
-*/
     public function createnewuser()
     {
         Registration::create();

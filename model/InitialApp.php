@@ -1,6 +1,6 @@
 <?php
 
-class InitialApp
+class Initialapp
 {
     public static function pocetna()
     {

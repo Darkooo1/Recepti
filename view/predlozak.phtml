@@ -1,48 +1,51 @@
 <!doctype html>
 <html lang="hr">
 <?php include_once 'predlozak/head.phtml'; ?>
-
 <body>
 <?php require_once 'predlozak/menu.phtml' ?>
-
     <main id="centar" role="main">
         <div class="container-fluid">
             <div class="row no-gutters">
                 <div class="col-md-3 col-sm-4 col-xs-12">
-                    <div id="kategorije">
-                        <p>Tu cemo staviti neke slike ili tako nesta, nekki dodatni izbornik</p>
-                                     
-                                        <?php
-                                            if (isset ($_SESSION['registracija'])): 
-                                        ?>
-                                                    Unos recepata:
-                                    
-                                                                <div class="btn-group-vertical" style="width: auto; display: block;">
-                                                            <?php
-                                                                //$kategorija=Kategorija::readAll();
-                                                                foreach ($meniKategorije as $kat):
-                                                            ?>
-                                                            
-                                                                    <button type="button" class="btn btn-secondary"><?php echo $kat->katjela; ?></button>
-                                                                    
-                                                            <?php
-                                                                endforeach;
-                                                                echo '</div>';
-                                                                endif; 
-                                                               
-                                                            ?>
-                                    </div>
+                    <div id="lijevizbornik">
+                        <p></p>
+                        <?php
+                            if (isset ($_SESSION['registracija'])): 
+                        ?>
+                    <div class="btn-group-vertical" style="width: auto; display: block;">
+                        <?php
+                        //$kategorija=Kategorija::readAll();
+                            foreach ($meniKategorije as $kat):
+                        ?>
+                        
+                        <a type="button" class="btn btn-secondary" href="/receptikategorija/index?sifra=<?php echo  $kat->sifra; ?>">
+                            <?php echo $kat->katjela; ?>
+                        </a>
 
+                        <?php
+                            endforeach;
+                            echo '</div>';
+                            endif; 
+                    ?>
                     </div>
-                
+                    </div>
                         <div class="col-md-6 col-sm-8 col-xs-12">
                             <div id="sadrzaj">
                         <?php echo $sadrzaj; ?>
                             </div>
                         </div>
-
                     <div class="col-md-3 col-sm-12 col-xs-12">
-                        <div id="nesto">nesto</div>
+                        <div id="desnizbornik">
+                        <?php
+                        if (isset ($_SESSION['registracija'])): 
+                        ?>
+                       <div class="btn-group-vertical" style="width: auto; display: block;"> 
+                        <a type="button" class="btn btn-secondary"href="/receptikorisnik/unosrecepta">Unos recepta</a>                                         
+                        </div>
+                        <?php
+                        endif;
+                        ?>
+                       </div> 
                     </div>
                 </div>   
             </div>
@@ -50,10 +53,7 @@
     </main>
 
     <?php require_once 'predlozak/footer.phtml' ?>
-    
     <?php require_once 'predlozak/skripte.phtml' ?>
-    
 </body>
-
 </html>
 

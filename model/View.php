@@ -9,13 +9,13 @@ class View
      $this->layout=$layout;   
     }
 
-    public function render($stranica,$parametri=[])
+    public function render($stranicaRender,$parametri=[])
     {
         
         ob_start();  
         $meniKategorije=Kategorija::readAll();
         extract($parametri);
-        include BP . 'view' . DIRECTORY_SEPARATOR . $stranica . '.phtml';
+        include BP . 'view' . DIRECTORY_SEPARATOR . $stranicaRender . '.phtml';
         $sadrzaj = ob_get_clean();  
 
         include BP . 'view' . DIRECTORY_SEPARATOR . $this->layout . '.phtml';
