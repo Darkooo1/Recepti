@@ -10,8 +10,4 @@ class Kategorija{
         return $izraz->fetchAll();
     }
 
-   
-    
-
-
 }

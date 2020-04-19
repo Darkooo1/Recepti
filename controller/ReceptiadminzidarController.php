@@ -11,12 +11,10 @@ class ReceptiadminzidarController extends AdminController
     [
         'receptitable'=>Recepti::readAll()
     ]);
-      
     }
 
     public function promjena()
     {
-        
         $recepti = Recepti::read($_GET['sifra']);
         if(!$recepti){
             $this->index();
@@ -26,23 +24,20 @@ class ReceptiadminzidarController extends AdminController
     ['recepti'=>$recepti,
         'message'=>'Napravite izmjene na receptu',
         'sifra'=> $_GET['sifra']
-        ]
-);
+        ]);
     }
 
-public function promjenarecepta()
+    public function promjenarecepta()
 {
-   /* print_r ($_POST);  */
-
     Recepti::update();
    header('location: /receptiadminzidar/index');
 }
 
     public function delete()
-
     {
         Recepti::delete();
-        header('location: /receptiadminzidar/index');
+        header ('location: /receptiadminzidar/index');
+        
     }
 
 

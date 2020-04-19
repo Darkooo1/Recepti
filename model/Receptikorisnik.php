@@ -18,9 +18,8 @@ class Receptikorisnik
            'kategorija' => $kategorija
         ]);
         return $vezabaza->lastInsertId();
-       
     }
-
+    
    public static function vezakorisnikrecept($sifrarecepta,$sifrakorisnik)
    {
     $vezabaza = Database::getInstanca();
@@ -35,10 +34,7 @@ class Receptikorisnik
     ]);
    }
 
-
-
-
-    }
+}
 
 
 

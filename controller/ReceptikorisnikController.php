@@ -1,14 +1,16 @@
 <?php
 
-class ReceptikorisnikController extends IndexController
+class ReceptikorisnikController extends AuthorizationController
 {
     private $viewDir = 'privatno' . DIRECTORY_SEPARATOR . 'receptikorisnik' .DIRECTORY_SEPARATOR;
 
     public function index()
     {
+        
+       $receptkorisnik=Recepti::korisnikrecepti($_SESSION['registracija']->sifra);
         $this->view->render($this->viewDir . 'index',
     [
-        'receptitable'=>Recepti::readAll()
+        'receptitable'=>$receptkorisnik
     ]);
     }
 
@@ -25,7 +27,7 @@ class ReceptikorisnikController extends IndexController
         $sifraNovogKreiranogRecepta = Receptikorisnik::create($_POST['kategorija']);
         Receptikorisnik::vezakorisnikrecept($sifraNovogKreiranogRecepta, $_SESSION['registracija']->sifra);
         $this->index();
-        //print_r($_POST);
+        
     }
 
     public function promjena()
@@ -45,12 +47,10 @@ class ReceptikorisnikController extends IndexController
     }
 
     public function promjenarecepta()
-{
-   /* print_r ($_POST);  */
-
+    {
     Recepti::update();
    header('location: /receptikorisnik/index');
-}
+    }
 
     public function delete()
     {

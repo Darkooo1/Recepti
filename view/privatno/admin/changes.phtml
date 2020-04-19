@@ -1,34 +1,26 @@
 <form class="log-in-form" method="POST"
 action="/adminzidar/changeregistration">
- <label>Korisničko ime
-    <input type="text" id="username" name="username" value="<?php 
-    echo $registracija->username;
-    ?>">
+<hr/>
+  <label><h3>Ime</h3>
+    <input type="text" id="ime" name="ime" value="<?php echo $registracija->ime;?>">
   </label>
+  <hr/>
+  <label><h3>Prezime</h3>
+    <input type="text" id="prezime" name="prezime" value="<?php echo $registracija->prezime;?>">
+  <hr/>
+ <label><h3>Korisničko ime</h3>
+    <input type="text" id="username" name="username" value="<?php echo $registracija->username;?>"></label>
   </label>
-  <label>Email
-    <input type="email" id="email" name="email" value="<?php 
-    echo $registracija->email;
-    ?>">
+  <hr/>
+  <label><h3>Email</h3>
+  <textarea class="form-control" rows="2"
+  input type="email" id="email" name="email"><?php echo $registracija->email;?></textarea>
   </label>
-  
-  <label>Ime
-    <input type="text" id="ime" name="ime" value="<?php 
-    echo $registracija->ime;
-    ?>">
-  </label>
-
-  <label>Prezime
-    <input type="text" id="prezime" name="prezime" value="<?php 
-    echo $registracija->prezime;
-    ?>">
-  
-  
-
   <div class="grid-x grid-margin-x">
     <div class="large-6 cell">
       <a href="/adminzidar/index" class="alert button expanded">Odustani</a>
     </div>
+    <br/>
     <div class="large-6 cell">
       <input type="submit" class="button expanded" value="Promjeni registriranog korisnika"></input>
     </div>
@@ -37,4 +29,4 @@ action="/adminzidar/changeregistration">
   <input type="hidden" name="sifra" 
   value="<?php echo $sifra; ?>">
 </form>
-<?php echo $message; ?>
+<h4><?php echo $message; ?></h4>

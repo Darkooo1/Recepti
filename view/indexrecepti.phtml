@@ -1,3 +1,10 @@
+<?php
+foreach ($meniKategorije as $kat):
+?>
+<a type="button" class="btn btn-secondary" href="/receptikategorija/index?sifra=<?php echo  $kat->sifra; ?>">
+<?php echo $kat->katjela; ?></a>
+<?php endforeach;?>
+<hr/>
 
 <h1 class="bd-title" id="content"><?php echo $podaci->naziv  ?></h1>
 <p class="font-weight-bold">Količina: </p>

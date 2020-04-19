@@ -2,10 +2,12 @@
 
 class Korisnik
 {
-  //u izradi
+ //izradjuje se
   public static function ulogiranKorisnik()
   {
     $vezabaza = Database::getInstanca();
+
+    
   }
 
 

@@ -3,9 +3,11 @@
     <td><?php echo $red->katjela ?></td>
     <td><?php echo $red->naziv ?></td>
     <td> 
-    <a href="/receptiadminzidar/promjena?sifra=<?php echo $red->sifra?>"><i title="Uredi" class="fas fa-edit fa-1x"style="font-size: 1.3em;"></i></a> 
-<a onclick="return confirm('Sigurno obrisati <?php echo $red->naziv?>?')" 
-          href="/receptiadminzidar/delete?sifra=<?php echo $red->sifra ?>"><i title="Obriši" class="fas fa-user-times fa-1x " 
-          style="font-size: 1.3em; color: red;"></i></a>
+    <a href="/receptiadminzidar/promjena?sifra=<?php echo $red->sifra?>">
+    <i title="Uredi" class="fas fa-edit fa-1x"style="font-size: 1.3em;"></i></a> 
+
+     <a onclick="return confirm('Sigurno obrisati <?php echo $red->naziv?>?')" 
+     href="/receptiadminzidar/delete?sifra=<?php echo $red->sifra ?>"  ><i title="Obriši" class="fas fa-user-times fa-1x " 
+     style="font-size: 1.3em; color: red;"></i></a>
     </td>
 </tr>

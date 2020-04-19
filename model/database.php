@@ -9,8 +9,8 @@ class Database extends PDO
         parent::__construct($dsn,$database['korisnik'],$database['lozinka']);
         $this->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
         $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     }
+
     public static function getInstanca()
     {
         if (is_null(self::$instanca))
@@ -19,6 +19,5 @@ class Database extends PDO
         }
         return self::$instanca;
     }
-
 
 }

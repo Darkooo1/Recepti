@@ -25,7 +25,7 @@ body {
 background-color: aqua;
 min-height: var(--visinacentra);
 padding: 5px;
-/*background-image: url(../img/foodmenu.png);*/
+
   }
 
 #sadrzaj
@@ -34,13 +34,14 @@ padding: 5px;
 min-height: var(--visinacentra);
 padding: 5px;
 background-image: url(../img/foodsadrzaj.png); 
+
   }
   #desnizbornik
   {
   background-color: dimgrey;
   min-height: var(--visinacentra);
   padding: 5px;
-  /*background-image: url(../img/foodmenu.png);*/
+
   }
 
 footer{

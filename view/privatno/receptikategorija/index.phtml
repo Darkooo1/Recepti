@@ -1,13 +1,6 @@
-<?php
-foreach ($meniKategorije as $kat):
-?>
-<a type="button" class="btn btn-secondary" href="/receptikategorija/index?sifra=<?php echo  $kat->sifra; ?>">
-<?php echo $kat->katjela; ?></a>
-<?php endforeach;?>
 
 <div class="grid-x grid-margin-x">
     <?php
-   // print_r ($receptitable);
         foreach($receptitable as $red){
             include 'tableusers.phtml';
         }

@@ -5,7 +5,7 @@
     <td> 
     <a href="/adminzidar/changes?sifra=<?php echo $red->sifra?>"><i title="Promjeni" class="fas fa-edit fa-1x"style="font-size: 1.3em;"></i></a> 
 <a onclick="return confirm('Sigurno obrisati <?php echo $red->ime . ' ' . $red->prezime ?>?')" 
-          href="/adminzidar/delete?password=<?php echo $red->password ?>"><i title="Obriši" class="fas fa-user-times fa-1x " 
+          href="/adminzidar/delete?sifra=<?php echo $red->sifra ?>"><i title="Obriši" class="fas fa-user-times fa-1x " 
           style="font-size: 1.3em; color: red;"></i></a>
     </td>
 </tr>

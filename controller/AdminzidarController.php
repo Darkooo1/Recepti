@@ -12,19 +12,16 @@ class AdminzidarController extends AdminController
     [
         'registrationtable'=>Registration::readRegistration()
     ]);
-      
     }
 
     public function delete()
-
     {
-        Registration::delete();
-        header('location: /adminzidar/index');
+       Registration::delete();
+        header ('location: /adminzidar/index');
     }
 
     public function changes()
     {
-        
         $registracija = Registration::read($_GET['sifra']);
         if(!$registracija){
             $this->index();
@@ -34,18 +31,14 @@ class AdminzidarController extends AdminController
     ['registracija'=>$registracija,
         'message'=>'Promjenite željene podatke',
         'sifra'=> $_GET['sifra']
-        ]
-);
-
-}
+        ]);
+    }
 
     public function changeregistration()
     {
-       /* print_r ($_POST); */
-
+        
         Registration::update();
        header('location: /adminzidar/index');
     }
-   
-
+    
 }

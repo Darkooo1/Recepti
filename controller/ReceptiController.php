@@ -42,13 +42,6 @@ class ReceptiController extends IndexController
             'stranicenje' => Recepti::stranicenje('')
            ]);  
     }
-        
-
-
-
-
-
-
-
+    
 
 }

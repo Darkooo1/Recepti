@@ -26,5 +26,4 @@ class RegistrationController extends Controller
     }
     
 
-
 }

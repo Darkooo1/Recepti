@@ -17,6 +17,22 @@ class Recepti
         return $izraz->fetchAll();
     }
 
+    public static function korisnikrecepti($sifrakorisnik)
+    {
+        $vezabaza = Database::getInstanca();
+        $izraz = $vezabaza->prepare('
+        select 
+        b.sifra, b.naziv, b.kolicina, b.sastojci, b.opis, c.katjela
+        from receptiregistracija a right join recepti b 
+        on a.recepti=b.sifra
+        right join kategorija c
+        on b.kategorija=c.sifra
+        where a.registracija=:sifra 
+         ');
+         $izraz->execute(['sifra'=>$sifrakorisnik]);
+         return $izraz->fetchAll();
+    }
+
     public static function receptiizkategorije($sifrakategorije)
     {
         $vezabaza = Database::getInstanca();
@@ -24,7 +40,7 @@ class Recepti
         a.sifra, a.naziv, a.kolicina, a.sastojci, a.opis, b.katjela
         from recepti a right join kategorija b on a.kategorija=b.sifra
         where b.sifra=:sifra 
-         ');
+        ');
          $izraz->execute(['sifra'=>$sifrakategorije]);
         return $izraz->fetchAll();
     }
@@ -36,21 +52,21 @@ class Recepti
         sifra, naziv, kolicina, sastojci, opis
         from recepti 
         where sifra=:sifra 
-         ');
+        ');
          $izraz->execute(['sifra'=>$sifra]);
         return $izraz->fetch();
     }
 
     public static function pretraga($uvjet,$stranica)
     {
-
         $rps=Initialapp::configuration('rezultataPoStranici');
-
         $od= $stranica*$rps-$rps;
+
         if ($od<0)
         {
         $od=0;
         }
+
         $uvjet='%'.$uvjet.'%';
         $vezabaza = Database::getInstanca();
         $izraz = $vezabaza->prepare(' 
@@ -64,7 +80,6 @@ class Recepti
         group by 
         a.sifra, a.naziv, a.kolicina, a.sastojci, a.opis, b.katjela
         limit :od,8
-        
         ');
         $izraz->bindParam('uvjet',$uvjet);
         $izraz->bindValue('od',$od, PDO::PARAM_INT);
@@ -112,16 +127,33 @@ class Recepti
     {
         try{ 
         $vezabaza = Database::getInstanca();
-        $izraz = $vezabaza->prepare('delete from recepti where sifra=:sifra');
+        $vezabaza->beginTransaction();
+        $izraz = $vezabaza->prepare('
+        select sifra
+        from receptiregistracija
+        where recepti=:sifra
+        ');
         $izraz->execute($_GET);
+
+        $sifraVeze=$izraz->fetchColumn();
+        $izraz = $vezabaza->prepare('
+        delete 
+        from receptiregistracija
+        where sifra=:sifra
+        ');
+        $izraz->execute(['sifra'=>$sifraVeze]);
+      
+        $izraz=$vezabaza->prepare('
+        delete from recepti 
+        where sifra=:sifra');
+        $izraz->execute($_GET);
+        $vezabaza->commit();
+
     }catch(PDOException $e){ 
         echo $e->getMessage(); 
         return false;
     }
     return true;
 }
-
-
-
 
 }

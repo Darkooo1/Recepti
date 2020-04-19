@@ -12,8 +12,6 @@ class ReceptikategorijaController extends IndexController
         'receptitable'=>$kategorija,
         
     ]);
-
-    
     }
 
 

@@ -29,5 +29,5 @@ spl_autoload_register(function($klasa)
 });
 
 Initialapp::pocetna();
-//pocetna aplikacija recepata
+
 
