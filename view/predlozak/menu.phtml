@@ -26,7 +26,6 @@
         //$kategorija=Kategorija::readAll();
         foreach ($meniKategorije as $kategorija):
         ?>
-<!-- kako napraviti menu kada kliknem na odredjenu kategoriju da izbaci samo jela iz te kategorije- U IZRADI -->
           <a class="dropdown-item" href="/receptikategorija/index?sifra=<?php echo  $kategorija->sifra; ?>"> 
           <?php echo $kategorija->katjela; ?></a>
 <?php if (next($kategorija)==true) {
@@ -68,14 +67,6 @@
   <li class="nav-item">
     <a class="nav-link" href="/index/era">ERA</a>
     </li>
-
-
-
-    <li class="nav-item">
-    <a class="nav-link" href="/receptikorisnik/index">provjera</a>
-    </li>
-
-    
     </ul>
     
 

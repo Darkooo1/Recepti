@@ -18,8 +18,8 @@
                             foreach ($meniKategorije as $kat):
                         ?>
                         
-                        <a type="button" class="btn btn-secondary" href="/receptikategorija/index?sifra=<?php echo  $kat->sifra; ?>">
-                            <?php echo $kat->katjela; ?>
+                        <a type="button" class="btn btn-secondary" href="/receptikorisnik/korisnikkategorija?sifra=<?php echo  $kat->sifra;?>">
+                        <?php echo $kat->katjela; ?>
                         </a>
 
                         <?php
@@ -40,12 +40,19 @@
                         if (isset ($_SESSION['registracija'])): 
                         ?>
                        <div class="btn-group-vertical" style="width: auto; display: block;"> 
-                        <a type="button" class="btn btn-secondary"href="/receptikorisnik/unosrecepta">Unos recepta</a>                                         
+                        <a type="button" class="btn btn-secondary" href="/receptikorisnik/unosrecepta">Unos recepta</a>                                         
                         </div>
+                        
+                        <div class="btn-group-vertical" style="width: auto; display: block;"> 
+    <a type="button" class="btn btn-secondary" href="/receptikorisnik/index">Tvoji recepti</a>
+    </div>
+
+    
                         <?php
                         endif;
                         ?>
                        </div> 
+                       
                     </div>
                 </div>   
             </div>

@@ -1,6 +1,6 @@
 /* Show it is fixed to the top */
 :root  {
-    --visinacentra: 800px;
+    --visinacentra: 1100px;
   }
 
   /*
@@ -25,7 +25,7 @@ body {
 background-color: aqua;
 min-height: var(--visinacentra);
 padding: 5px;
-
+background-image: url(../img/foodizbornik.png); 
   }
 
 #sadrzaj
@@ -33,7 +33,7 @@ padding: 5px;
     background-color: rgb(145, 182, 177);
 min-height: var(--visinacentra);
 padding: 5px;
-background-image: url(../img/foodsadrzaj.png); 
+background-image: url(../img/sadzajpozadina.png); 
 
   }
   #desnizbornik
@@ -41,11 +41,11 @@ background-image: url(../img/foodsadrzaj.png);
   background-color: dimgrey;
   min-height: var(--visinacentra);
   padding: 5px;
-
+  background-image: url(../img/foodizbornik.png); 
   }
 
 footer{
-    background-color: rgb(170, 121, 22);
+    background-color: #e3f2fd
     padding-top: 5px;
     padding-bottom: 5px;
     background-image: url(../img/food2.png);

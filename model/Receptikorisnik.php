@@ -22,6 +22,8 @@ class Receptikorisnik
     
    public static function vezakorisnikrecept($sifrarecepta,$sifrakorisnik)
    {
+
+    
     $vezabaza = Database::getInstanca();
     $izraz = $vezabaza->prepare('insert into receptiregistracija
     (recepti,registracija) values
@@ -32,6 +34,24 @@ class Receptikorisnik
         'registracija' => $sifrakorisnik
         
     ]);
+   }
+
+   public static function vezakorisnikkategorija($sifrakategorija,$sifrakorisnik)
+   {
+    $vezabaza = Database::getInstanca();
+    $izraz = $vezabaza->prepare('select 
+    c.sifra, c.naziv, c.kolicina, c.sastojci, c.opis, d.katjela
+    from receptiregistracija a inner join registracija b on a.registracija=b.sifra
+    left join recepti c on a.recepti=c.sifra
+    right join kategorija d on c.kategorija=d.sifra
+    where a.registracija=:sifrakorisnik and d.sifra=:sifra
+    ');
+     $izraz->execute([
+        'sifra' => $sifrakategorija,
+        
+        'sifrakorisnik' => $sifrakorisnik
+    ]);
+    return $izraz->fetchAll();
    }
 
 }

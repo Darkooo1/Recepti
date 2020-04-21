@@ -79,7 +79,7 @@ class Recepti
         like :uvjet 
         group by 
         a.sifra, a.naziv, a.kolicina, a.sastojci, a.opis, b.katjela
-        limit :od,8
+        limit :od,5
         ');
         $izraz->bindParam('uvjet',$uvjet);
         $izraz->bindValue('od',$od, PDO::PARAM_INT);

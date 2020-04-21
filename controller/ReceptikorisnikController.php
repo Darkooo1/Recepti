@@ -14,6 +14,17 @@ class ReceptikorisnikController extends AuthorizationController
     ]);
     }
 
+    public function korisnikkategorija()
+    {
+
+        $kategorijakorisnik=Receptikorisnik::vezakorisnikkategorija($_GET['sifra'],$_SESSION['registracija']->sifra);
+
+      $this->view->render($this->viewDir . 'index',
+        [
+            'receptitable'=>$kategorijakorisnik
+        ]);
+    }
+     
     public function unosrecepta()
     {
         if(!isset($_POST['kategorija']) || 
