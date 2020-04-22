@@ -132,6 +132,27 @@ public function refreshtableregistracija()
     insert into recepti (sifra,naziv,kolicina,sastojci,opis,kategorija)
     values
     
+     (null, \'Domaca goveda juha \', \'6 osobe \', \'600 g govedine za juhu1, 2 l vode, 200 g crvene mrkve, 100 g žute mrkve, 100 g korijena celera, 100 g korijena peršina\',
+    \'Oprano meso stavite u mlaku vodu i čim voda zakipi, dodajte sol, očišćeno korjenasto povrće, nekoliko zrna papra i luk, koji ste prethodno popekli u tavici. Nakon toga, dodajte list kupusa i kelja, grančicu celera i Vegetu pa poklopite. Kad juha ponovo zakipi, smanjite temperaturu pa lagano kuhajte oko 2 sata. Meso izvadite, juhu procijedite pa u nju ukuhajte domaće rezance.
+    Posluživanje
+    Pospite nasjeckanim peršinom i poslužite.
+    Savjet
+    Da biste dobili bistru juhu, potrebno ju je kuhati na laganoj vatri.
+    Napomena
+    Ovo možete i zamrznuti
+    Zamrzavanje: Juhu pripremite prema receptu, ali nemojte ukuhati rezance. Procijeđenu juhu ohladite i skinite suvišnu masnoću. Rasporedite je u odgovarajuće posude s poklopcem ili plastične vrećice i zamrznite. 
+    Odmrzavanje: Posude ili vrećice s juhom kratko uronite u vruću vodu kako bi se zamrznuta juha odvojila od stijenki. Zatim je prebacite u posudu s malo vode i zagrijavajte na laganoj vatri dok se ne otopi. Ukuhajte rezance ili drugu tjesteninu. Trajnost: 90 dana.\',
+    2),
+
+     (null, \'Veganska francuska salata\', \'4 osobe \', \'Domaća tofuneza Sastojci: 300 gr bijelog tofua, sok 1 limuna, 1 žličica senfa, 1 žličica šećera, sol, papar, 1 žlica ulja. Ako ste u gužvi, možete kupiti zamrznuti miks sjeckanog povrća za francusku, ali ako imate volje i vremena, naravno da će biti puno ukusnije ako skuhate kockice domaćeg, svježeg povrća. Treba vam oko 200 gr graška, 200 gr mrkve, 200 gr krumpira. Dalje: 2 kisela krastavca, pola kisele jabuke, oko 300 – 500 ml veganske majoneze ili tofuneza, sol, papar, sok od 1 limuna, 1 žličica senfa, peršin, kriške limuna i listovi peršina za ukras.\',
+    \'Postupak: Povrće nasjeckati na kockice i skuhati u slanoj vodi pazeći da se ne raskuha (da ostane čvrsto). Nasjeckati krastavce i jabuke na kockice, usitniti peršin. Pomiješajte prohlađeno povrće i ostale sastojke u zdjeli, poravnajte i ukrasite listovima peršina i kriškama limuna – poslužite rashlađeno. Postupak domaća tofuneza: Sve sastojke promiješati u blenderu. Možete dodati malo vode.\',
+    4),
+     (null, \'Orijentalna salata \', \'1 osobe \', \'2-3 mrkve( ca.150gr), 1vk suhih grožđica, 1vk pinjola, 1vk svjezeg lista persina Preljev: 2vk maslinovog ulja , 2vk jabukovog sirćeta, 1ck meda ili bagremovog sirupa, 1/2ck curry /kari u prahu morske soli\',
+    \'Pinjole preprzite na suhoj tavi da lijepo porumene i ostavite sa strane. Peršin operite i sitno nasjeckajte. Mrkvu ogulite, pa je nozicem za guljenje narezite na trakice, okrecuci mrkvu citavo vrijeme da dobijete tanke uske trakice  . Stavite u zdjelu i dodajte pinjole, peršin i grozdjice. Za preljev dobroro izmjesajte ulje, sirce, med i curry.
+    Prelijte preko mrkve, posolite svjeze mljevenom morskom soli  i sve dobro izmjesajte.  Salatu ostavite nakratko da ostoji i uzivajte u njoj.
+    Posluživanje: Salatu mozete posluziti i toplu, tako sto zagrijete mrkvu sa malo ulja u pecnici na 150*C  5 minuta i onda dodate ostale sastojke kao sto pise u rezeptu.\',
+    5),
+
     (null, \'Tjestenina s meksickim bolonjezom \', \'4 osobe \', \'tjestenina po želji, mljeveno meso, pasirana rajcica, kukuruz šecerac (150 g), crveni grah , glavica luka ,mix zacina (sol, papar, vegeta i paprika) ,sir\',
     \'Tjesteninu pravim na sljedeci nacin: Zagrijem u kuhalu (oko 1L) vode. Kad prokuha voda, u lonac stavim žlicu soli i ulja, tjesteninu i prokuhanu vodu. Oko 8-10 min tijesto se kuha (ovisi o tjestenini). Nakon toga ostavim tijesto u poklopljenom loncu. Nakon 5 min ocjedim ga i spremno je za jesti.
     Dok se tijesto kuha, pravim pripreme za bolonjez. Ugrijem ulje u tavi i stavim luk da se malo dinsta. Kada luk poprimi boju, stavljam mljeveno meso. Kada poprimi sivkastu boju, stavljam 2 caše vode i puštam da se meso krcka u tome. Nakon toga stavljam jednu pasiranu rajcicu i puštam da se krcka meso. 
@@ -162,8 +183,8 @@ public function refreshtableregistracija()
     alter table  receptiregistracija add foreign key (recepti) references recepti(sifra);
     alter table recepti add foreign key (kategorija) references kategorija(sifra);
     ');
-            $izraz->execute();
-            
-}*/
-
+    $izraz->execute();
+           echo 'ok'; 
+}
+*/
 }
